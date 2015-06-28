@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  KeyboardNotiticationExample
 //
-//  Created by hanhui on 15/6/28.
+//  Created by southpeak on 15/6/28.
 //  Copyright (c) 2015年 xmu. All rights reserved.
 //
 
