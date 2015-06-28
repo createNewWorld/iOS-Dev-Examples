@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var scrollView: UIScrollView?
     @IBOutlet var textField1: UITextField?
     @IBOutlet var textField2: UITextField?
 
@@ -58,11 +59,21 @@ class ViewController: UIViewController {
         println("keyboard did change")
         
         let dict = notification.userInfo
-        if dict != nil {
-            for (key, value) in dict! {
-                println("\(key): \(value)")
-            }
-        }
+        
+        var animationDuration: NSTimeInterval = 0
+        var animationCurve: UIViewAnimationCurve = .EaseInOut
+        var keyboardEndFrame: CGRect = CGRectZero
+        
+        dict?[UIKeyboardAnimationCurveUserInfoKey]?.getValue(&animationCurve)
+        dict?[UIKeyboardAnimationDurationUserInfoKey]?.getValue(&animationDuration)
+        dict?[UIKeyboardFrameEndUserInfoKey]?.getValue(&keyboardEndFrame)
+        
+        var keyboardFrame = self.view.convertRect(keyboardEndFrame, toView: nil)
+        
+        var frame = scrollView?.frame
+        frame?.size.height = self.view.frame.size.height - keyboardFrame.size.height
+        
+        scrollView?.frame = frame!
     }
 }
 
