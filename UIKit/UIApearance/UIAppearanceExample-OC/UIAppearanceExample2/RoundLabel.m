@@ -2,7 +2,7 @@
 //  RoundLabel.m
 //  UIAppearanceExample2
 //
-//  Created by hanhui on 15/7/18.
+//  Created by southpeak on 15/7/18.
 //  Copyright (c) 2015年 iosdev. All rights reserved.
 //
 

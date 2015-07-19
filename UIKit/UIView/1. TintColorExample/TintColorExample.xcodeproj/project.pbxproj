@@ -159,6 +159,7 @@
 		E13035741B3EF936002C5698 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = xmu;
 				TargetAttributes = {
