@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4D5E6E76-0F50-4725-805B-8E6FDAC61DCC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0610FD1A106146C4A40779C36C7F6CCE23E129FA</key>
+		<string>https://github.com/southpeak/iOS-Dev-Examples.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>UIKit/UIApearance/UIApearanceExample/UIApearanceExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0610FD1A106146C4A40779C36C7F6CCE23E129FA</key>
+		<string>../../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/southpeak/iOS-Dev-Examples.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0610FD1A106146C4A40779C36C7F6CCE23E129FA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0610FD1A106146C4A40779C36C7F6CCE23E129FA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-Dev-Examples</string>
+		</dict>
+	</array>
+</dict>
+</plist>
