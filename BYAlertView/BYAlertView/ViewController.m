@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "FTPopOverMenu.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -111,6 +112,15 @@ static NSString *cellId = @"NormalCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    UIView *sender = self.navigationController.navigationItem.titleView;
+    UIView *sender = cell.textLabel;
+    [FTPopOverMenu showForSender:sender withMenu:@[@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2"] doneBlock:^(NSInteger selectedIndex) {
+        
+    } dismissBlock:^{
+        
+    }];
 }
 
 

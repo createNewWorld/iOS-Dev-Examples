@@ -16,6 +16,7 @@
 		6762FEAC1D64101000109C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6762FEAA1D64101000109C18 /* LaunchScreen.storyboard */; };
 		6762FEB71D64101100109C18 /* BYAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEB61D64101100109C18 /* BYAlertViewTests.m */; };
 		6762FEC21D64101100109C18 /* BYAlertViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEC11D64101100109C18 /* BYAlertViewUITests.m */; };
+		67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		6762FEBD1D64101100109C18 /* BYAlertViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYAlertViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6762FEC11D64101100109C18 /* BYAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYAlertViewUITests.m; sourceTree = "<group>"; };
 		6762FEC31D64101100109C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67DBE2901D65AAEB006932D7 /* FTPopOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopOverMenu.h; sourceTree = "<group>"; };
+		67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopOverMenu.m; sourceTree = "<group>"; };
 		701E8F906115C9E0C8B2C682 /* Pods-BYAlertView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYAlertView.release.xcconfig"; path = "Pods/Target Support Files/Pods-BYAlertView/Pods-BYAlertView.release.xcconfig"; sourceTree = "<group>"; };
 		AA5B3AB950B7D627B73CC427 /* libPods-BYAlertView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BYAlertView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +124,8 @@
 				6762FEA01D64101000109C18 /* AppDelegate.m */,
 				6762FEA21D64101000109C18 /* ViewController.h */,
 				6762FEA31D64101000109C18 /* ViewController.m */,
+				67DBE2901D65AAEB006932D7 /* FTPopOverMenu.h */,
+				67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */,
 				6762FEA51D64101000109C18 /* Main.storyboard */,
 				6762FEA81D64101000109C18 /* Assets.xcassets */,
 				6762FEAA1D64101000109C18 /* LaunchScreen.storyboard */,
@@ -345,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,
 				6762FE9E1D64101000109C18 /* main.m in Sources */,
