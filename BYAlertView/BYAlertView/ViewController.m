@@ -37,6 +37,7 @@ static NSString *cellId = @"NormalCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"BYAlertView";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = NO;
