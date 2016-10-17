@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "FTPopOverMenu.h"
 #import "WaterViewController.h"
+#import "ConsultNewViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -123,9 +124,15 @@ static NSString *cellId = @"NormalCell";
 //    } dismissBlock:^{
 //        
 //    }];
-    
-    WaterViewController *vc = [[WaterViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+    if(indexPath.row == 0){
+        ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
+        vc.needPushDrug = NO;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 1){
+        WaterViewController *vc = [[WaterViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+   
 }
 
 

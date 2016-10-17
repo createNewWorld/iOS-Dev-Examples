@@ -29,8 +29,6 @@
     UINavigationController *navc = [[UINavigationController alloc] initWithRootViewController:vc];
     navc.navigationBar.translucent = NO;
     _window.rootViewController = navc;
-
-    Class class;
     [self configeNavigationBarShowStyle];
     
     [WXAppConfiguration setAppGroup:@"cdfortis"];

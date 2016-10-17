@@ -8,6 +8,7 @@
 
 #import "WaterViewController.h"
 #import "WaterRipple/FTWaterView.h"
+#import "FTConsultButton.h"
 
 @interface WaterViewController ()
 
@@ -41,6 +42,26 @@
     [self.view addSubview:button1];
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(start) userInfo:nil repeats:YES];
+    
+    self.view.backgroundColor = [UIColor darkGrayColor];
+    
+    FTConsultButton *ftConsultBtn = [[FTConsultButton alloc] initWithFrame:CGRectMake(0, 64, 50, 46)];
+    ftConsultBtn.ft_selectedImage = [UIImage imageNamed:@"consult_muteBtn_selected"];
+    ftConsultBtn.ft_normalImage = [UIImage imageNamed:@"consult_muteBtn_normal"];
+    ftConsultBtn.descript = @"Mute";
+    [ftConsultBtn addTarget:self action:@selector(ftConsultBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [ftConsultBtn setUpSubview];
+    [self.view addSubview:ftConsultBtn];
+}
+
+- (void)ftConsultBtnClicked:(UIButton *)sender
+{
+
+    if([sender isSelected]){
+        sender.selected = NO;
+    }else{
+        sender.selected = YES;
+    }
 }
 
 - (void)buttonClicked:(UIButton *)sender
