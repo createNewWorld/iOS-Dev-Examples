@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "FTPopOverMenu.h"
+#import "WaterViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -114,14 +115,17 @@ static NSString *cellId = @"NormalCell";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    UIView *sender = self.navigationController.navigationItem.titleView;
-    UIView *sender = cell.textLabel;
-    [FTPopOverMenu showForSender:sender withMenu:@[@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2"] doneBlock:^(NSInteger selectedIndex) {
-        
-    } dismissBlock:^{
-        
-    }];
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+////    UIView *sender = self.navigationController.navigationItem.titleView;
+//    UIView *sender = cell.textLabel;
+//    [FTPopOverMenu showForSender:sender withMenu:@[@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2",@"测试1",@"测试2"] doneBlock:^(NSInteger selectedIndex) {
+//        
+//    } dismissBlock:^{
+//        
+//    }];
+    
+    WaterViewController *vc = [[WaterViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
