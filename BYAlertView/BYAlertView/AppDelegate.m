@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
+#import <weex/WeexSDK.h>
+
 @interface AppDelegate ()
 
 @end
@@ -28,7 +30,26 @@
     navc.navigationBar.translucent = NO;
     _window.rootViewController = navc;
 
+    Class class;
     [self configeNavigationBarShowStyle];
+    
+    [WXAppConfiguration setAppGroup:@"cdfortis"];
+    [WXAppConfiguration setAppName:@"微问诊"];
+    [WXAppConfiguration setAppVersion:@"CFBundleShortVersionString"];
+    [WXAppConfiguration setExternalUserAgent:@"cd"];
+    
+    [WXSDKEngine initSDKEnviroment];
+    
+    NSString *string = @"2016-12-30";
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC+0800"]];
+    [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *date = [formatter dateFromString:string];
+    NSDateFormatter *signFormatter = [[NSDateFormatter alloc] init];
+    [signFormatter setDateFormat:@"M/dd/yyyy"];
+    NSString *signDateStr = [signFormatter stringFromDate:date];
+    NSLog(@"siginDateStr =%@",signDateStr);
     return YES;
 }
 
