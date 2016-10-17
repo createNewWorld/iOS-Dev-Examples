@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 
-#import <weex/WeexSDK.h>
+//#import <weex/WeexSDK.h>
 
 @interface AppDelegate ()
 
@@ -31,12 +31,12 @@
     _window.rootViewController = navc;
     [self configeNavigationBarShowStyle];
     
-    [WXAppConfiguration setAppGroup:@"cdfortis"];
-    [WXAppConfiguration setAppName:@"微问诊"];
-    [WXAppConfiguration setAppVersion:@"CFBundleShortVersionString"];
-    [WXAppConfiguration setExternalUserAgent:@"cd"];
+ //   [WXAppConfiguration setAppGroup:@"cdfortis"];
+ //   [WXAppConfiguration setAppName:@"微问诊"];
+ //   [WXAppConfiguration setAppVersion:@"CFBundleShortVersionString"];
+ //   [WXAppConfiguration setExternalUserAgent:@"cd"];
     
-    [WXSDKEngine initSDKEnviroment];
+ //   [WXSDKEngine initSDKEnviroment];
     
     NSString *string = @"2016-12-30";
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];

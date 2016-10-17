@@ -6,6 +6,6 @@ platform :ios, '7.0'
 target 'BYAlertView' do
 
  pod 'Masonry', '~> 1.0.1'
- pod 'weex', '~> 0.6.0'
+ #pod 'weex', '~> 0.6.0'
 
 end

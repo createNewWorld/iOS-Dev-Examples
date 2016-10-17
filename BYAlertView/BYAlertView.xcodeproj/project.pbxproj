@@ -11,6 +11,7 @@
 		4E330D9B1DB3BBAF007B0031 /* FTWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330D9A1DB3BBAF007B0031 /* FTWaterView.m */; };
 		4E330D9F1DB3C1FF007B0031 /* WaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330D9D1DB3C1FF007B0031 /* WaterViewController.m */; };
 		4E330DA01DB3C1FF007B0031 /* WaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E330D9E1DB3C1FF007B0031 /* WaterViewController.xib */; };
+		4E330DA31DB51927007B0031 /* CirleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330DA21DB51927007B0031 /* CirleProgressView.m */; };
 		6762FE9E1D64101000109C18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FE9D1D64101000109C18 /* main.m */; };
 		6762FEA11D64101000109C18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEA01D64101000109C18 /* AppDelegate.m */; };
 		6762FEA41D64101000109C18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEA31D64101000109C18 /* ViewController.m */; };
@@ -50,6 +51,8 @@
 		4E330D9C1DB3C1FF007B0031 /* WaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterViewController.h; sourceTree = "<group>"; };
 		4E330D9D1DB3C1FF007B0031 /* WaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterViewController.m; sourceTree = "<group>"; };
 		4E330D9E1DB3C1FF007B0031 /* WaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterViewController.xib; sourceTree = "<group>"; };
+		4E330DA11DB51927007B0031 /* CirleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirleProgressView.h; sourceTree = "<group>"; };
+		4E330DA21DB51927007B0031 /* CirleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirleProgressView.m; sourceTree = "<group>"; };
 		6762FE991D64101000109C18 /* BYAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6762FE9D1D64101000109C18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6762FE9F1D64101000109C18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 			children = (
 				67838D881DB4764800659FD6 /* ConsultNewViewController.h */,
 				67838D891DB4764800659FD6 /* ConsultNewViewController.m */,
+				4E330DA11DB51927007B0031 /* CirleProgressView.h */,
+				4E330DA21DB51927007B0031 /* CirleProgressView.m */,
 				67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */,
 				67838D901DB4BC0B00659FD6 /* TPImageView.h */,
 				67838D911DB4BC0B00659FD6 /* TPImageView.m */,
@@ -402,6 +407,7 @@
 				4E330D9F1DB3C1FF007B0031 /* WaterViewController.m in Sources */,
 				67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */,
 				4E330D9B1DB3BBAF007B0031 /* FTWaterView.m in Sources */,
+				4E330DA31DB51927007B0031 /* CirleProgressView.m in Sources */,
 				67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,

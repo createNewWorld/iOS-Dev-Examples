@@ -21,6 +21,7 @@
 @property BOOL isAnimating;
 @property (nonatomic) CGFloat lineWidth;
 -(void)startRippleEffec;
+-(void)stopRippleEffec;
 -(void)setRippleEffectWithColor:(UIColor *)color;
 
 
