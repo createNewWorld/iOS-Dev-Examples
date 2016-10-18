@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -11,12 +11,14 @@
                 <outlet property="avatarView" destination="cSH-zc-9dQ" id="OOD-We-ROy"/>
                 <outlet property="doctorAvatarView" destination="SvH-wB-Sno" id="kPc-fN-3Cr"/>
                 <outlet property="doctorNameLabel" destination="imT-fh-5Qg" id="NUZ-MP-1un"/>
-                <outlet property="hangUpButton" destination="YuW-HM-5fv" id="0rL-X4-i2I"/>
+                <outlet property="hangUpButton" destination="a9R-VS-3yR" id="clj-eh-myn"/>
                 <outlet property="menuView" destination="1bj-XX-UFB" id="3PS-6x-1JU"/>
+                <outlet property="mySelfView" destination="AJN-ES-Mei" id="9XT-cK-kU8"/>
                 <outlet property="rippleView" destination="KYu-9d-G3U" id="Q4k-eg-uB7"/>
                 <outlet property="statusLabel" destination="zfj-if-wLl" id="zCr-T5-qQA"/>
                 <outlet property="toolView" destination="E2E-4h-SxS" id="QuN-JD-vQF"/>
                 <outlet property="topStatuView" destination="ya8-At-vls" id="ds8-wP-GnJ"/>
+                <outlet property="videoView" destination="TBm-Wg-hGd" id="Alk-ZZ-MlF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,21 +43,34 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="consult_cover_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="mNo-qs-4U6"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YuW-HM-5fv">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9p-fG-aGk">
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9R-VS-3yR">
+                            <constraints>
+                                <constraint firstAttribute="width" constant="46" id="IQu-p0-VGr"/>
+                                <constraint firstAttribute="height" constant="46" id="pfH-3M-atn"/>
+                            </constraints>
+                            <state key="normal" image="consult_hangUp_normal"/>
+                            <connections>
+                                <action selector="doHangUp:" destination="-1" eventType="touchUpInside" id="f6I-F3-qDK"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="HK2-P0-YBV"/>
-                        <constraint firstAttribute="height" constant="46" id="MOO-4E-cXD"/>
+                        <constraint firstItem="a9R-VS-3yR" firstAttribute="centerX" secondItem="t9p-fG-aGk" secondAttribute="centerX" id="Gp0-9r-c3J"/>
+                        <constraint firstItem="a9R-VS-3yR" firstAttribute="centerY" secondItem="t9p-fG-aGk" secondAttribute="centerY" id="eD6-Pe-Ibv"/>
+                        <constraint firstAttribute="height" constant="134" id="iXK-5Q-HI6"/>
                     </constraints>
-                    <state key="normal" image="consult_hangUp_normal"/>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="t9p-fG-aGk" secondAttribute="bottom" id="AVm-CG-EN3"/>
+                <constraint firstAttribute="trailing" secondItem="t9p-fG-aGk" secondAttribute="trailing" id="Gcc-Hy-RCr"/>
                 <constraint firstItem="mNo-qs-4U6" firstAttribute="top" secondItem="E2E-4h-SxS" secondAttribute="top" id="Ni9-b3-MNf"/>
                 <constraint firstAttribute="trailing" secondItem="mNo-qs-4U6" secondAttribute="trailing" id="O3E-7b-cT4"/>
-                <constraint firstItem="YuW-HM-5fv" firstAttribute="centerX" secondItem="E2E-4h-SxS" secondAttribute="centerX" id="X0X-vq-Sdo"/>
                 <constraint firstAttribute="bottom" secondItem="mNo-qs-4U6" secondAttribute="bottom" id="fkv-Dn-L9U"/>
-                <constraint firstAttribute="bottom" secondItem="YuW-HM-5fv" secondAttribute="bottom" constant="44" id="jzZ-li-rvj"/>
+                <constraint firstItem="t9p-fG-aGk" firstAttribute="leading" secondItem="E2E-4h-SxS" secondAttribute="leading" id="kV9-YK-df0"/>
                 <constraint firstItem="mNo-qs-4U6" firstAttribute="leading" secondItem="E2E-4h-SxS" secondAttribute="leading" id="l5X-EU-x5Z"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -100,12 +115,12 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="consult_cover_top" translatesAutoresizingMaskIntoConstraints="NO" id="1hP-tq-pMN"/>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr.XXXX xxxx-MD" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imT-fh-5Qg">
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting ..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfj-if-wLl">
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>

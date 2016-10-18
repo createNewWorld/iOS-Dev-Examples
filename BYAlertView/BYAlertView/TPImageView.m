@@ -82,6 +82,14 @@ static NSString *kLLARingSpinnerAnimationKey = @"llaringspinnerview.rotation";
     [self.progressLayer removeFromSuperlayer];
     self.isAnimating = false;
 }
+
+- (void)stopRippleEffec
+{
+    [circleShape removeAnimationForKey:@"waterRipple0"];
+    [circleShape1 removeAnimationForKey:@"waterRipple1"];
+    [circleShape2 removeAnimationForKey:@"waterRipple2"];
+}
+
 -(void)startRippleEffec{//波纹效果
     
     UIColor *stroke = rippleColor ? rippleColor : [UIColor colorWithRed:(26/255.0f) green:(199/255.0f) blue:(247/255.0f) alpha:1.0f];
@@ -107,7 +115,7 @@ static NSString *kLLARingSpinnerAnimationKey = @"llaringspinnerview.rotation";
     
         CABasicAnimation *scaleAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
         scaleAnimation.fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
-        scaleAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(2, 2, 1)];
+        scaleAnimation.toValue = [NSValue valueWithCATransform3D:CATransform3DMakeScale(1.5, 1.5, 1)];
     
         CABasicAnimation *alphaAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
         alphaAnimation.fromValue = @1;
@@ -115,13 +123,15 @@ static NSString *kLLARingSpinnerAnimationKey = @"llaringspinnerview.rotation";
     
         CAAnimationGroup *animation = [CAAnimationGroup animation];
         animation.animations = @[scaleAnimation, alphaAnimation];
-        animation.duration = 0.8f;
+        animation.duration = 1.5f;
         animation.repeatCount=INFINITY;
         animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
-        [circleShape addAnimation:animation forKey:nil];
+        [circleShape addAnimation:animation forKey:@"waterRipple0"];
         
         for(int i = 0; i < 2; i ++){
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            float delay = i == 0 ? 0.45 : 0.9;
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 CAShapeLayer *layer = [CAShapeLayer layer];
                 layer.path = path.CGPath;
                 layer.position = shapePosition;
@@ -133,11 +143,11 @@ static NSString *kLLARingSpinnerAnimationKey = @"llaringspinnerview.rotation";
                 if(i == 0){
                      circleShape1 = layer;
                      [self.layer insertSublayer:circleShape1 above:circleShape];
-                     [circleShape1 addAnimation:animation forKey:nil];
+                     [circleShape1 addAnimation:animation forKey:@"waterRipple1"];
                 }else{
                      circleShape2 = layer;
                      [self.layer insertSublayer:circleShape2 above:circleShape1];
-                     [circleShape2 addAnimation:animation forKey:nil];
+                     [circleShape2 addAnimation:animation forKey:@"waterRipple2"];
                 }
             });
         }

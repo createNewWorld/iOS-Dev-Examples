@@ -129,6 +129,12 @@ static NSString *cellId = @"NormalCell";
         vc.needPushDrug = NO;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 1){
+        
+        ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
+        vc.needPushDrug = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+       
+    }else{
         WaterViewController *vc = [[WaterViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
