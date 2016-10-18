@@ -9,14 +9,20 @@
 #import "ConsultNewViewController.h"
 #import <Masonry/Masonry.h>
 #import "FTConsultButton.h"
-#import "TPImageView.h"
+#import "FTWaterImageView.h"
 #import "CirleProgressView.h"
 
 @interface ConsultNewViewController ()
 
 {
     int _duration;
+    NSString *displayPushDrugs;
+    CGFloat _toolViewHeight;
+    BOOL _isShowToolView;
 }
+//提示view
+@property (strong, nonatomic) IBOutlet UIView *tipView;
+@property (weak, nonatomic) IBOutlet UILabel *tipLabel;
 
 //顶部视图
 @property (strong, nonatomic) IBOutlet UIView *topStatuView;
@@ -29,10 +35,15 @@
 @property (strong, nonatomic) IBOutlet UIView *menuView;
 @property (nonatomic, strong) UILabel *numberLabel;
 @property (nonatomic, strong) CirleProgressView *cirleView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *ajustPhoneViewHeight;
+
+//推药详情视图
+@property (nonatomic, strong) UIView *pushDrugDetailsView;
+@property (nonatomic, strong) UILabel *pushDrugLabel;
 
 //医生头像视图
 @property (strong, nonatomic) IBOutlet UIView *doctorAvatarView;
-@property (weak, nonatomic) IBOutlet TPImageView *rippleView;
+@property (weak, nonatomic) IBOutlet FTWaterImageView *rippleView;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarView;
 
 @property (weak, nonatomic) IBOutlet UIButton *hangUpButton;
@@ -67,13 +78,19 @@
         
         self.timingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateTiming) userInfo:nil repeats:YES];
     });
+    
+    [self showTip:@"connss daljf  afddal  afldf a safds  asfdas " duration:10];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.rippleView stopAnimating];
+    [self.rippleView stopRippleEffec];
 }
 
+#pragma mark - init Subviews
 - (void)initSubview
 {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideOrShowToolView)];
@@ -81,6 +98,16 @@
     tap.numberOfTouchesRequired = 1;
     [self.view addGestureRecognizer:tap];
     
+    //添加头部视图
+    NSNumber *topOrBottomViewHeight = @210;
+    _toolViewHeight = 210;
+    CGFloat avatarOrginY = 144;
+    if([UIScreen mainScreen].bounds.size.width <= 320){
+        topOrBottomViewHeight = @180;
+        avatarOrginY = 114;
+        self.ajustPhoneViewHeight.constant = 104;
+        _toolViewHeight = 180;
+    }
     //医生头像
     self.avatarView.layer.cornerRadius = 60.0f;
     self.avatarView.layer.masksToBounds = YES;
@@ -90,19 +117,19 @@
     [self.view addSubview:self.avatarView];
     NSNumber *avatarWidth = [NSNumber numberWithInteger:120];
     [self.doctorAvatarView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(144);
+        make.top.equalTo(self.view.mas_top).offset(avatarOrginY);
         make.centerX.equalTo(self.view.mas_centerX);
         make.width.equalTo(avatarWidth);
         make.height.equalTo(avatarWidth);
     }];
     [self.rippleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(144);
+        make.top.equalTo(self.view.mas_top).offset(avatarOrginY);
         make.centerX.equalTo(self.view.mas_centerX);
         make.width.equalTo(avatarWidth);
         make.height.equalTo(avatarWidth);
     }];
     [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).offset(144);
+        make.top.equalTo(self.view.mas_top).offset(avatarOrginY);
         make.centerX.equalTo(self.view.mas_centerX);
         make.width.equalTo(avatarWidth);
         make.height.equalTo(avatarWidth);
@@ -117,13 +144,13 @@
     }];
     self.videoView.hidden = YES;
     
-    //添加头部视图
+    
     [self.view addSubview:self.topStatuView];
     [self.topStatuView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view.mas_top);
         make.leading.equalTo(self.view.mas_leading);
         make.trailing.equalTo(self.view.mas_trailing);
-        make.height.equalTo(@210);
+        make.height.equalTo(topOrBottomViewHeight);
     }];
     
     //添加工具视图
@@ -133,7 +160,7 @@
         make.bottom.equalTo(self.view.mas_bottom);
         make.leading.equalTo(self.view.mas_leading);
         make.trailing.equalTo(self.view.mas_trailing);
-        make.height.equalTo(@210);
+        make.height.equalTo(topOrBottomViewHeight);
     }];
     
     [self.toolView addSubview:self.menuView];
@@ -252,22 +279,68 @@
     }
 }
 
-
-- (void)hideOrShowToolView
+- (void)showPushDrug
 {
-    [self.view layoutIfNeeded];
-  
-    __block CGFloat offset = 210;
-    self.toolViewIsShow = !self.toolViewIsShow;
-    offset = self.toolViewIsShow ? 0 : 210;
-    [UIView animateWithDuration:0.35 animations:^{
-        
-        [self.toolView mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.bottom.equalTo(self.view.mas_bottom).offset(offset);
-        }];
-        [self.view layoutIfNeeded];
-    }completion:^(BOOL finished) {
+    if(!self.pushDrugDetailsView){
+        UIView * pushDrugDetailsView=[[UIView alloc]initWithFrame:CGRectMake(0, 0, 300, 120)];
+        pushDrugDetailsView.backgroundColor=[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.3];
+        pushDrugDetailsView.layer.borderColor=[[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.3]CGColor];
+        pushDrugDetailsView.layer.borderWidth=1;
+        pushDrugDetailsView.layer.cornerRadius=10;
+        pushDrugDetailsView.layer.masksToBounds=YES;
+        self.pushDrugDetailsView = pushDrugDetailsView;
+    }
+    [self.view addSubview:self.pushDrugDetailsView];
+    [self.pushDrugDetailsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.toolView.mas_top);
+        make.centerX.equalTo(self.toolView.mas_centerX);
+        make.leading.equalTo(self.toolView.mas_leading).offset(8);
+        make.trailing.equalTo(self.toolView.mas_trailing).offset(-8);
+        make.height.equalTo(@120);
     }];
+    self.pushDrugDetailsView.alpha = 1;
+    if (!self.pushDrugLabel) {
+        UILabel *pushDrugLabel=[[UILabel alloc] init];
+        pushDrugLabel.font=[UIFont systemFontOfSize:13];
+        pushDrugLabel.textColor=[UIColor whiteColor];
+        pushDrugLabel.numberOfLines=5;
+        self.pushDrugLabel = pushDrugLabel;
+    }
+    [self.pushDrugDetailsView addSubview:self.pushDrugLabel];
+    [self.pushDrugDetailsView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.pushDrugDetailsView.mas_top).offset(-20);
+        make.leading.equalTo(self.pushDrugDetailsView.mas_leading).offset(8);
+        make.trailing.equalTo(self.pushDrugDetailsView.mas_trailing).offset(-8);
+        make.top.equalTo(self.pushDrugDetailsView.mas_top).offset(20);
+    }];
+    self.pushDrugLabel.text=displayPushDrugs;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.pushDrugDetailsView.alpha=1;
+    } completion:^(BOOL finished) {
+        
+    }];
+}
+
+-(void)showOrHidePushDrugView:(BOOL)isShow{
+    if (isShow) {
+        int time=0;
+        if (_isShowToolView==NO) {
+            [self showToolView];
+            time=0.6;
+        }
+        if(self && [self respondsToSelector:@selector(showPushDrug)]){
+            [self performSelector:@selector(showPushDrug) withObject:nil afterDelay:time];
+        }
+    }
+    else{
+        [UIView animateWithDuration:0.3 animations:^{
+            self.pushDrugDetailsView.alpha=0;
+        } completion:^(BOOL finished) {
+            [self.pushDrugDetailsView removeFromSuperview];
+            self.pushDrugDetailsView=nil;
+        }];
+    }
 }
 
 #pragma mark - UIResponder 
@@ -314,6 +387,36 @@
     self.timingTimer = nil;
 }
 
+//显示或者隐藏工具栏
+- (void)hideOrShowToolView
+{
+    [self.view layoutIfNeeded];
+    
+    __block CGFloat offset = _toolViewHeight;
+    self.toolViewIsShow = !self.toolViewIsShow;
+    offset = self.toolViewIsShow ? 0 : _toolViewHeight;
+    _isShowToolView = offset == 0 ? NO : YES;
+    [UIView animateWithDuration:0.35 animations:^{
+        
+        [self.toolView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(offset);
+        }];
+        [self.view layoutIfNeeded];
+    }];
+}
+//显示工具栏目
+- (void)showToolView
+{
+    _isShowToolView = YES;
+    [UIView animateWithDuration:0.35 animations:^{
+        
+        [self.toolView mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.view.mas_bottom).offset(_toolViewHeight);
+        }];
+        [self.view layoutIfNeeded];
+    }];
+}
+//更新计时器
 - (void)updateTiming
 {
     _duration ++;
@@ -330,7 +433,6 @@
     }else{
         self.cirleView.hidden = YES;
     }
-    
 }
 
 - (void)startTimingTimer
@@ -344,7 +446,7 @@
     [self.timingTimer setFireDate:[NSDate distantFuture]];
 }
 
-
+//翻转动画
 - (void)flipAnimation
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
@@ -362,6 +464,7 @@
     NSLog(@"filp animation end");
 }
 
+//设置推药 数目标签
 - (void)setNumber:(int)number
 {
     NSString *str = [NSString stringWithFormat:@"%d", number];
@@ -381,6 +484,38 @@
         make.width.equalTo([NSNumber numberWithInteger:expectSize.width]);
     }];
     [self.numberLabel layoutIfNeeded];
+}
+
+- (void)showTip:(NSString *)tip duration:(NSTimeInterval)duration
+{
+    if(!tip || tip.length <= 0){
+    }else{
+        self.tipLabel.text = tip;
+        
+        CGSize size = [tip boundingRectWithSize:CGSizeMake([UIScreen mainScreen].bounds.size.width - 104, 90)
+                                        options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                                     attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil].size;
+        
+        [self.view addSubview:self.tipView];
+        NSNumber *width = [NSNumber numberWithFloat:([UIScreen mainScreen].bounds.size.width - 80)];
+        NSNumber *height = [NSNumber numberWithFloat:(size.height + 40)];
+        
+        [self.tipView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(width);
+            make.height.equalTo(height);
+            make.top.equalTo(self.avatarView.mas_bottom).offset(60);
+            make.centerX.equalTo(self.avatarView.mas_centerX);
+        }];
+        [self.view bringSubviewToFront:self.tipView];
+        
+        [UIView animateWithDuration:0.35 delay:duration options:UIViewAnimationOptionCurveEaseInOut animations:^{
+
+            self.tipView.alpha = 0.0f;
+        } completion:^(BOOL finished) {
+            [self.tipView removeFromSuperview];
+            self.tipView = nil;
+        }];
+    }
 }
 
 @end

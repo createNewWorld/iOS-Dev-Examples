@@ -26,6 +26,7 @@
     if(self){
         //27,66,86 #1b4256
         self.backgroundColor = [UIColor colorWithRed:(27/255.0f) green:(66/255.0f) blue:(86/255.0f) alpha:1.0f];
+ //       self.backgroundColor = [UIColor clearColor];
  //       CGFloat leftMargin = 5.0f;
         
         CGFloat diameter = MIN(frame.size.width, frame.size.height);
