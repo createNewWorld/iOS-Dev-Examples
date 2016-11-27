@@ -11,6 +11,7 @@
 #import "WaterViewController.h"
 #import "ConsultNewViewController.h"
 #import "LabelViewController.h"
+#import "CustomNumberKeyboardViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -59,7 +60,7 @@ static NSString *cellId = @"NormalCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,6 +81,10 @@ static NSString *cellId = @"NormalCell";
             break;
         case 3:
             cell.textLabel.text = @"跟随子视图扩张label";
+            break;
+        case 4:
+            cell.textLabel.text = @"自定义键盘，显示光标";
+            break;
         default:
             break;
     }
@@ -135,13 +140,15 @@ static NSString *cellId = @"NormalCell";
         ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
         vc.needPushDrug = YES;
         [self.navigationController pushViewController:vc animated:YES];
-       
     }else if(indexPath.row == 2){
         WaterViewController *vc = [[WaterViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else{
+    }else if(indexPath.row == 3){
         LabelViewController *lb = [[LabelViewController alloc] init];
         [self.navigationController pushViewController:lb animated:YES];
+    }else if(indexPath.row == 4){
+        CustomNumberKeyboardViewController *cvc = [[CustomNumberKeyboardViewController alloc] init];
+        [self.navigationController pushViewController:cvc animated:YES];
     }
    
 }
