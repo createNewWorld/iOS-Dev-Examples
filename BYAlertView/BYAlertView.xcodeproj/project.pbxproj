@@ -27,7 +27,6 @@
 		67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D851DB4603600659FD6 /* FTConsultButton.m */; };
 		67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D891DB4764800659FD6 /* ConsultNewViewController.m */; };
 		67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */; };
-		67838D921DB4BC0B00659FD6 /* FTWaterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D911DB4BC0B00659FD6 /* FTWaterImageView.m */; };
 		67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */; };
 /* End PBXBuildFile section */
 
@@ -430,12 +429,7 @@
 				67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,
-<<<<<<< HEAD
-				67838D921DB4BC0B00659FD6 /* TPImageView.m in Sources */,
 				4E5D30A01DDDFD16006D7064 /* LabelViewController.m in Sources */,
-=======
-				67838D921DB4BC0B00659FD6 /* FTWaterImageView.m in Sources */,
->>>>>>> f9838142e4ce4eb2530146c25641a4619f6ab650
 				67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */,
 				6762FE9E1D64101000109C18 /* main.m in Sources */,
 			);
