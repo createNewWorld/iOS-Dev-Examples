@@ -14,35 +14,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SocketRocket.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>weex.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4929445D088597705B9055FC3EF700C6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>53480ED0BE09FF49E34B1702D485CAAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C02156312A05E26CAB6CD75FEC922985</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EEF05CD73D934F08366C93E68CBD02F2</key>
+		<key>76977131F7252086B576081676C0C230</key>
 		<dict>
 			<key>primary</key>
 			<true/>

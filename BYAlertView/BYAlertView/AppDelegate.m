@@ -48,8 +48,50 @@
     [signFormatter setDateFormat:@"M/dd/yyyy"];
     NSString *signDateStr = [signFormatter stringFromDate:date];
     NSLog(@"siginDateStr =%@",signDateStr);
+    
+   
+    
+//    NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
+//    
+//    NSURL *url = [NSURL URLWithString:urlStr];
+//    NSError *error = nil;
+//    NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
+//    
+//    NSLog(@"imageData = %@, %@", imageData, error);
+//    
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    
+//    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+//        
+//        NSLog(@"imageData2 = %@, %@", imageData, connectionError);
+//    }];
+//    
+// 
+//    
+//    NSMutableURLRequest *imageRequest = [NSMutableURLRequest requestWithURL:url];
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:imageRequest completionHandler:^(NSURL * _Nullable location, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        NSLog(@"response = %@ , location = %@, error = %@", response, location, error);
+//        
+//        //6.处理文件
+////        //6.1 获得文件的名称
+////        NSString *fileName = response.suggestedFilename;
+////        
+////        //6.2 写路径到磁盘+拼接文件的全路径
+////        NSString *fullPath = [[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:fileName];
+////        
+////        //6.3 执行剪切操作
+////        
+////        NSLog(@"%@",fullPath);
+//        
+//    }];
+//    
+//    [task resume];
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

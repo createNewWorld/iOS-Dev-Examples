@@ -1,11 +1,11 @@
 PODS:
-  - Masonry (1.0.2)
+  - Masonry (1.0.1)
 
 DEPENDENCIES:
   - Masonry (~> 1.0.1)
 
 SPEC CHECKSUMS:
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
 
 PODFILE CHECKSUM: 1d89cc723e0f955f17648736675beccfcbb18651
 

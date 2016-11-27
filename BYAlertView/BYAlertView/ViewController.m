@@ -18,6 +18,7 @@
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableDictionary *dict;
 
 @end
 
@@ -48,6 +49,11 @@ static NSString *cellId = @"NormalCell";
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
 }
 
+- (void)loadImage
+{
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -69,6 +75,8 @@ static NSString *cellId = @"NormalCell";
 //    [cell configeWithModel:dataSource[indexPath.row]];
 //    cell.textLabel.textColor = [UIColor blackColor];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.imageView.frame = CGRectMake(0, 0, 30, 30);
+    cell.imageView.backgroundColor = [UIColor orangeColor];
     switch (indexPath.row) {
         case 0:
             cell.textLabel.text = @"第一种弹窗";
@@ -88,6 +96,20 @@ static NSString *cellId = @"NormalCell";
         default:
             break;
     }
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    dispatch_async(queue, ^{
+        
+        NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
+        NSURL *url = [NSURL URLWithString:urlStr];
+        NSError *error = nil;
+        NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
+        UIImage *image = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.imageView.image = image;
+        });
+    });
+
     return cell;
 }
 

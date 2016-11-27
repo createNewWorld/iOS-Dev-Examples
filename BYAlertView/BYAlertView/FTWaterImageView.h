@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TPImageView : UIImageView
+@interface FTWaterImageView : UIImageView
 {
     UIImageView *imageView;
     UIColor *rippleColor;

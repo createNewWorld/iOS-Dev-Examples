@@ -27,7 +27,7 @@
 		67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D851DB4603600659FD6 /* FTConsultButton.m */; };
 		67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D891DB4764800659FD6 /* ConsultNewViewController.m */; };
 		67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */; };
-		67838D921DB4BC0B00659FD6 /* TPImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D911DB4BC0B00659FD6 /* TPImageView.m */; };
+		67838D921DB4BC0B00659FD6 /* FTWaterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D911DB4BC0B00659FD6 /* FTWaterImageView.m */; };
 		67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */; };
 /* End PBXBuildFile section */
 
@@ -84,8 +84,8 @@
 		67838D881DB4764800659FD6 /* ConsultNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultNewViewController.h; sourceTree = "<group>"; };
 		67838D891DB4764800659FD6 /* ConsultNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsultNewViewController.m; sourceTree = "<group>"; };
 		67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConsultNewViewController.xib; sourceTree = "<group>"; };
-		67838D901DB4BC0B00659FD6 /* TPImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPImageView.h; sourceTree = "<group>"; };
-		67838D911DB4BC0B00659FD6 /* TPImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPImageView.m; sourceTree = "<group>"; };
+		67838D901DB4BC0B00659FD6 /* FTWaterImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTWaterImageView.h; sourceTree = "<group>"; };
+		67838D911DB4BC0B00659FD6 /* FTWaterImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTWaterImageView.m; sourceTree = "<group>"; };
 		67DBE2901D65AAEB006932D7 /* FTPopOverMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTPopOverMenu.h; sourceTree = "<group>"; };
 		67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTPopOverMenu.m; sourceTree = "<group>"; };
 		701E8F906115C9E0C8B2C682 /* Pods-BYAlertView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYAlertView.release.xcconfig"; path = "Pods/Target Support Files/Pods-BYAlertView/Pods-BYAlertView.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 				4E330DA11DB51927007B0031 /* CirleProgressView.h */,
 				4E330DA21DB51927007B0031 /* CirleProgressView.m */,
 				67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */,
-				67838D901DB4BC0B00659FD6 /* TPImageView.h */,
-				67838D911DB4BC0B00659FD6 /* TPImageView.m */,
+				67838D901DB4BC0B00659FD6 /* FTWaterImageView.h */,
+				67838D911DB4BC0B00659FD6 /* FTWaterImageView.m */,
 			);
 			name = ConsultNewViewController;
 			sourceTree = "<group>";
@@ -430,8 +430,12 @@
 				67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,
+<<<<<<< HEAD
 				67838D921DB4BC0B00659FD6 /* TPImageView.m in Sources */,
 				4E5D30A01DDDFD16006D7064 /* LabelViewController.m in Sources */,
+=======
+				67838D921DB4BC0B00659FD6 /* FTWaterImageView.m in Sources */,
+>>>>>>> f9838142e4ce4eb2530146c25641a4619f6ab650
 				67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */,
 				6762FE9E1D64101000109C18 /* main.m in Sources */,
 			);
@@ -580,6 +584,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BYAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -595,6 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BYAlertView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

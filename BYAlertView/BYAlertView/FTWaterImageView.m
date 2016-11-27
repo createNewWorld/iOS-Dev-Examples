@@ -6,11 +6,11 @@
 //  Copyright (c) 2014年 成都富顿科技有限公司. All rights reserved.
 //
 
-#import "TPImageView.h"
+#import "FTWaterImageView.h"
 
 static NSString *kLLARingSpinnerAnimationKey = @"llaringspinnerview.rotation";
 
-@implementation TPImageView
+@implementation FTWaterImageView
 {
     CAShapeLayer *circleShape;
     CAShapeLayer *circleShape1;
