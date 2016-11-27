@@ -10,6 +10,7 @@
 #import "FTPopOverMenu.h"
 #import "WaterViewController.h"
 #import "ConsultNewViewController.h"
+#import "LabelViewController.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -58,7 +59,7 @@ static NSString *cellId = @"NormalCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 4;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -77,7 +78,8 @@ static NSString *cellId = @"NormalCell";
         case 2:
             cell.textLabel.text = @"第三种弹窗";
             break;
-            
+        case 3:
+            cell.textLabel.text = @"跟随子视图扩张label";
         default:
             break;
     }
@@ -134,9 +136,12 @@ static NSString *cellId = @"NormalCell";
         vc.needPushDrug = YES;
         [self.navigationController pushViewController:vc animated:YES];
        
-    }else{
+    }else if(indexPath.row == 2){
         WaterViewController *vc = [[WaterViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        LabelViewController *lb = [[LabelViewController alloc] init];
+        [self.navigationController pushViewController:lb animated:YES];
     }
    
 }

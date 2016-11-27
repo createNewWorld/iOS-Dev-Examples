@@ -43,6 +43,10 @@
 
 @property (nonatomic, strong) NSTimer *timingTimer; //计时器
 
+@property (nonatomic) BOOL heart;
+
+@property (nonatomic, strong) NSThread *myThread;
+
 @end
 
 @implementation ConsultNewViewController
@@ -67,11 +71,46 @@
         
         self.timingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateTiming) userInfo:nil repeats:YES];
     });
+    
+   
+    
+    self.myThread = [[NSThread alloc] initWithTarget:self selector:@selector(doDelayMethod) object:nil];
+    [self.myThread start];
+    
+    dispatch_queue_t queue_serial = dispatch_queue_create("com.helloaction.gcdSerial", DISPATCH_QUEUE_SERIAL);
+    for(int i = 0; i < 10; i ++){
+        dispatch_async(queue_serial, ^{
+            NSLog(@"currentThread = %@", [NSThread currentThread]);
+        });
+    }
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.heart = NO;
+    NSLog(@"标记子线程将结束");
+    [self.myThread cancel];
+}
+
+- (void)doDelayMethod
+{
+    NSLog(@"现在执行子线程中的方法");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.heart = YES;
+        [self delayMethod];
+    });
+
+}
+
+- (void)delayMethod
+{
+    if(self.heart){
+        NSLog(@"每隔3秒执行一次 心跳");
+        [self performSelector:@selector(delayMethod) withObject:self afterDelay:3];
+    }
 }
 
 - (void)initSubview
