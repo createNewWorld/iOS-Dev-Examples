@@ -54,6 +54,10 @@
 
 @property (nonatomic, strong) NSTimer *timingTimer; //计时器
 
+@property (nonatomic) BOOL heart;
+
+@property (nonatomic, strong) NSThread *myThread;
+
 @end
 
 @implementation ConsultNewViewController
@@ -91,6 +95,25 @@
 }
 
 #pragma mark - init Subviews
+- (void)doDelayMethod
+{
+    NSLog(@"现在执行子线程中的方法");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.heart = YES;
+        [self delayMethod];
+    });
+
+}
+
+- (void)delayMethod
+{
+    if(self.heart){
+        NSLog(@"每隔3秒执行一次 心跳");
+        [self performSelector:@selector(delayMethod) withObject:self afterDelay:3];
+    }
+}
+
 - (void)initSubview
 {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideOrShowToolView)];

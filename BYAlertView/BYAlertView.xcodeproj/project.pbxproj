@@ -12,6 +12,10 @@
 		4E330D9F1DB3C1FF007B0031 /* WaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330D9D1DB3C1FF007B0031 /* WaterViewController.m */; };
 		4E330DA01DB3C1FF007B0031 /* WaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E330D9E1DB3C1FF007B0031 /* WaterViewController.xib */; };
 		4E330DA31DB51927007B0031 /* CirleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330DA21DB51927007B0031 /* CirleProgressView.m */; };
+		4E5D30A01DDDFD16006D7064 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5D309F1DDDFD16006D7064 /* LabelViewController.m */; };
+		4E5D30A21DDDFD7F006D7064 /* LabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E5D30A11DDDFD7F006D7064 /* LabelViewController.xib */; };
+		4E9F30CF1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F30CD1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.m */; };
+		4E9F30D01DEB14E900A4CD69 /* CustomNumberKeyboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E9F30CE1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.xib */; };
 		6762FE9E1D64101000109C18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FE9D1D64101000109C18 /* main.m */; };
 		6762FEA11D64101000109C18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEA01D64101000109C18 /* AppDelegate.m */; };
 		6762FEA41D64101000109C18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEA31D64101000109C18 /* ViewController.m */; };
@@ -23,7 +27,6 @@
 		67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D851DB4603600659FD6 /* FTConsultButton.m */; };
 		67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D891DB4764800659FD6 /* ConsultNewViewController.m */; };
 		67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */; };
-		67838D921DB4BC0B00659FD6 /* FTWaterImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D911DB4BC0B00659FD6 /* FTWaterImageView.m */; };
 		67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +56,12 @@
 		4E330D9E1DB3C1FF007B0031 /* WaterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaterViewController.xib; sourceTree = "<group>"; };
 		4E330DA11DB51927007B0031 /* CirleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CirleProgressView.h; sourceTree = "<group>"; };
 		4E330DA21DB51927007B0031 /* CirleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CirleProgressView.m; sourceTree = "<group>"; };
+		4E5D309E1DDDFD16006D7064 /* LabelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelViewController.h; sourceTree = "<group>"; };
+		4E5D309F1DDDFD16006D7064 /* LabelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelViewController.m; sourceTree = "<group>"; };
+		4E5D30A11DDDFD7F006D7064 /* LabelViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelViewController.xib; sourceTree = "<group>"; };
+		4E9F30CC1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNumberKeyboardViewController.h; sourceTree = "<group>"; };
+		4E9F30CD1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNumberKeyboardViewController.m; sourceTree = "<group>"; };
+		4E9F30CE1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomNumberKeyboardViewController.xib; sourceTree = "<group>"; };
 		6762FE991D64101000109C18 /* BYAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BYAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6762FE9D1D64101000109C18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6762FE9F1D64101000109C18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -155,6 +164,12 @@
 				6762FEA01D64101000109C18 /* AppDelegate.m */,
 				6762FEA21D64101000109C18 /* ViewController.h */,
 				6762FEA31D64101000109C18 /* ViewController.m */,
+				4E5D309E1DDDFD16006D7064 /* LabelViewController.h */,
+				4E5D309F1DDDFD16006D7064 /* LabelViewController.m */,
+				4E5D30A11DDDFD7F006D7064 /* LabelViewController.xib */,
+				4E9F30CC1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.h */,
+				4E9F30CD1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.m */,
+				4E9F30CE1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.xib */,
 				67838D871DB4761F00659FD6 /* ConsultNewViewController */,
 				67DBE2901D65AAEB006932D7 /* FTPopOverMenu.h */,
 				67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */,
@@ -332,6 +347,8 @@
 				67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */,
 				4E330DA01DB3C1FF007B0031 /* WaterViewController.xib in Resources */,
 				6762FEA71D64101000109C18 /* Main.storyboard in Resources */,
+				4E5D30A21DDDFD7F006D7064 /* LabelViewController.xib in Resources */,
+				4E9F30D01DEB14E900A4CD69 /* CustomNumberKeyboardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,11 +424,12 @@
 				4E330D9F1DB3C1FF007B0031 /* WaterViewController.m in Sources */,
 				67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */,
 				4E330D9B1DB3BBAF007B0031 /* FTWaterView.m in Sources */,
+				4E9F30CF1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.m in Sources */,
 				4E330DA31DB51927007B0031 /* CirleProgressView.m in Sources */,
 				67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,
-				67838D921DB4BC0B00659FD6 /* FTWaterImageView.m in Sources */,
+				4E5D30A01DDDFD16006D7064 /* LabelViewController.m in Sources */,
 				67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */,
 				6762FE9E1D64101000109C18 /* main.m in Sources */,
 			);
