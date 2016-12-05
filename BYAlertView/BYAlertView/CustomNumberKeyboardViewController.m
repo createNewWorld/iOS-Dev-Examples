@@ -30,6 +30,7 @@
     }
     //isDoingEdit draw a line
     self.inputTextField.userInteractionEnabled = NO;
+    self.inputTextField.secureTextEntry = YES;
     [self setEditing:YES textField:self.inputTextField];
     [self.inputTextField addTarget:self action:@selector(valueChanged:)  forControlEvents:UIControlEventAllEditingEvents];
 }
