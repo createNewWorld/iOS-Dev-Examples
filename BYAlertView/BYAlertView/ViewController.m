@@ -12,6 +12,9 @@
 #import "ConsultNewViewController.h"
 #import "LabelViewController.h"
 #import "CustomNumberKeyboardViewController.h"
+#import "ButtonTouchActionViewController.h"
+
+#import "ModeChooseView.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -66,7 +69,7 @@ static NSString *cellId = @"NormalCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,22 +96,33 @@ static NSString *cellId = @"NormalCell";
         case 4:
             cell.textLabel.text = @"自定义键盘，显示光标";
             break;
+            
+        case 5:
+            cell.textLabel.text = @"ModelChooseView";
+            break;
+        case 6:
+            cell.textLabel.text = @"ButtonAction";
+            break;
+            
+        case 7:
+            cell.textLabel.text = @"CustomCollectionView";
+            break;
         default:
             break;
     }
     
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-    dispatch_async(queue, ^{
-        
-        NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
-        NSURL *url = [NSURL URLWithString:urlStr];
-        NSError *error = nil;
-        NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
-        UIImage *image = [UIImage imageWithData:imageData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = image;
-        });
-    });
+//    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//    dispatch_async(queue, ^{
+//        
+//        NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
+//        NSURL *url = [NSURL URLWithString:urlStr];
+//        NSError *error = nil;
+//        NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
+//        UIImage *image = [UIImage imageWithData:imageData];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            cell.imageView.image = image;
+//        });
+//    });
 
     return cell;
 }
@@ -171,8 +185,15 @@ static NSString *cellId = @"NormalCell";
     }else if(indexPath.row == 4){
         CustomNumberKeyboardViewController *cvc = [[CustomNumberKeyboardViewController alloc] init];
         [self.navigationController pushViewController:cvc animated:YES];
+    }else if (indexPath.row== 5){
+        ModeChooseView *view = [[ModeChooseView alloc] initWithTitle:@"Choose an Appointment Mode" andButtonTitles:@[@"视频问诊", @"就诊"] images:@[@"online_img", @"clinic_img"]];
+        [view show];
+    }else if(indexPath.row == 6){
+        ButtonTouchActionViewController *vc = [[ButtonTouchActionViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 7){
+        
     }
-   
 }
 
 

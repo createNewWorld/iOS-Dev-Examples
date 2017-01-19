@@ -51,9 +51,10 @@
     
    
     
-//    NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
-//    
-//    NSURL *url = [NSURL URLWithString:urlStr];
+    NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
+//
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
 //    NSError *error = nil;
 //    NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
 //    
@@ -89,7 +90,77 @@
 //    
 //    [task resume];
     
+    NSMutableURLRequest *uploadRequest = [NSMutableURLRequest requestWithURL:url];
+    //创建 http hear 请求头
+    NSString *boundary = @"1024000";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data;boundary=%@", boundary];
+    [uploadRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
+    [uploadRequest setHTTPMethod:@"POST"];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    /**
+     *  上传文件格式
+     *  beginBoundary
+     *  Content-Disposition:form-data;name="<服务器知道你的名字>";filename="<服务器保存的文件名>"
+     *  Content-Type:application/zip //根据不同的文件类型选择不同的值
+     *  <空行>
+     *  <二进制数据>
+     *  endBoundary
+     */
+    
+//    范例：
+//    
+//    ----KenApp299912318
+//    Content-Disposition: form-data; name="<服务器端需要知道的名字>"; filename="<服务器端这个传上来的文件名>"
+//    Content-Type: application/zip --根据不同的文件类型选择不同的值
+//    
+//    <空行>
+//    
+//    <二进制数据>
+//    
+//    ----KenApp299912318--
+    NSURLSessionUploadTask *uploadTask = [session uploadTaskWithRequest:uploadRequest
+                                                               fromData:[self createDataForRequestHTTPBodyForSource]
+                                                      completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                          NSLog(@"DATA:\n%@\nEND DATA\n", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+                                                          NSLog(@"response = %@", response);
+                                                          if([error isEqual:[NSNull class]] || error == nil){
+                                                              NSLog(@"上传成功");
+                                                          }else{
+                                                              NSLog(@"上传失败");
+                                                          }
+                                                      }];
+    [uploadTask resume];
+    
+
+    
+    
     return YES;
+}
+
+- (NSData *)createDataForRequestHTTPBodyForSource
+{
+    NSMutableString *bodyHead = [[NSMutableString alloc] init];
+    NSMutableData *data = [NSMutableData new];
+    
+    NSURL *url = [NSURL URLWithString:@"http://baidu.com/download/imageName.jpeg"];
+    NSString *fileName = [url lastPathComponent];
+    NSString *name = @"uploadFile";
+    
+    NSData *fileContent = [NSData dataWithContentsOfURL:url];
+    NSString *beginBoundary = @"----KenApp299912318";
+    [bodyHead appendString:beginBoundary];
+    [bodyHead appendFormat:@"-------"];
+    //数据类型描述
+    [bodyHead appendFormat:@"Content-Disposition:form-data;name=\"%@\";filename=\"%@\"\r\n",name,fileName];
+    [bodyHead appendFormat:@"Content-Type: application/zip\r\n\r\n"];
+    //内容
+    [data appendData:[bodyHead dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [data appendData:fileContent];
+    NSString *endBoundary = @"KenApp299912318----";
+    [data appendData:[endBoundary dataUsingEncoding:NSUTF8StringEncoding]];
+    return data;
 }
 
 
