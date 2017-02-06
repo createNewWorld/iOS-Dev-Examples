@@ -13,6 +13,8 @@
 #import "LabelViewController.h"
 #import "CustomNumberKeyboardViewController.h"
 #import "ButtonTouchActionViewController.h"
+#import "YYTableViewController.h"
+#import "TimeAxisTableViewController.h"
 
 #import "ModeChooseView.h"
 
@@ -31,7 +33,7 @@ static NSString *cellId = @"NormalCell";
 
 - (void)awakeFromNib
 {
-
+    [super awakeFromNib];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -69,7 +71,7 @@ static NSString *cellId = @"NormalCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -105,8 +107,12 @@ static NSString *cellId = @"NormalCell";
             break;
             
         case 7:
-            cell.textLabel.text = @"CustomCollectionView";
+            cell.textLabel.text = @"TableViewController";
             break;
+        case 8:
+            cell.textLabel.text = @"时间轴";
+            break;
+            
         default:
             break;
     }
@@ -172,7 +178,6 @@ static NSString *cellId = @"NormalCell";
         vc.needPushDrug = NO;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 1){
-        
         ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
         vc.needPushDrug = YES;
         [self.navigationController pushViewController:vc animated:YES];
@@ -192,7 +197,11 @@ static NSString *cellId = @"NormalCell";
         ButtonTouchActionViewController *vc = [[ButtonTouchActionViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 7){
-        
+        YYTableViewController *vc = [[YYTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if(indexPath.row == 8){
+        TimeAxisTableViewController *taTableVC = [[TimeAxisTableViewController alloc] init];
+        [self.navigationController pushViewController:taTableVC animated:YES];
     }
 }
 

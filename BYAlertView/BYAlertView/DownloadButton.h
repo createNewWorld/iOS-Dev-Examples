@@ -21,11 +21,14 @@ typedef NS_ENUM(NSInteger, DownloadControlState) {
     DownloadControlStateReserved     = 0xFF000000               // flags reserved for internal framework use
 };
 
+typedef void (^OpenFileBlock)(void);
+
 @interface DownloadButton : UIButton
+
+@property (nonatomic, copy) OpenFileBlock openBlock;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 
-- (void)setImage:(UIImage *)image forState:(DownloadControlState)state;
 - (void)setDownloadGraphicalProgress:(CGFloat)progress ForState:(DownloadControlState)state;
 
 @end
