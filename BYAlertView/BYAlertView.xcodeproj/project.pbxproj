@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		29E51863498B8DE4C3DC48AD /* libPods-BYAlertView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA5B3AB950B7D627B73CC427 /* libPods-BYAlertView.a */; };
+		4E1CF2A81E5F568200FABDF0 /* nnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CF2A61E5F568200FABDF0 /* nnViewController.m */; };
+		4E1CF2A91E5F568200FABDF0 /* nnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E1CF2A71E5F568200FABDF0 /* nnViewController.xib */; };
 		4E330D9B1DB3BBAF007B0031 /* FTWaterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330D9A1DB3BBAF007B0031 /* FTWaterView.m */; };
 		4E330D9F1DB3C1FF007B0031 /* WaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E330D9D1DB3C1FF007B0031 /* WaterViewController.m */; };
 		4E330DA01DB3C1FF007B0031 /* WaterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E330D9E1DB3C1FF007B0031 /* WaterViewController.xib */; };
@@ -22,8 +24,6 @@
 		6762FEA71D64101000109C18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6762FEA51D64101000109C18 /* Main.storyboard */; };
 		6762FEA91D64101000109C18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6762FEA81D64101000109C18 /* Assets.xcassets */; };
 		6762FEAC1D64101000109C18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6762FEAA1D64101000109C18 /* LaunchScreen.storyboard */; };
-		6762FEB71D64101100109C18 /* BYAlertViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEB61D64101100109C18 /* BYAlertViewTests.m */; };
-		6762FEC21D64101100109C18 /* BYAlertViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6762FEC11D64101100109C18 /* BYAlertViewUITests.m */; };
 		67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D851DB4603600659FD6 /* FTConsultButton.m */; };
 		67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67838D891DB4764800659FD6 /* ConsultNewViewController.m */; };
 		67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 67838D8A1DB4764800659FD6 /* ConsultNewViewController.xib */; };
@@ -49,6 +49,9 @@
 
 /* Begin PBXFileReference section */
 		067D4CA918F77BE433D1373F /* Pods-BYAlertView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BYAlertView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BYAlertView/Pods-BYAlertView.debug.xcconfig"; sourceTree = "<group>"; };
+		4E1CF2A51E5F568200FABDF0 /* nnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nnViewController.h; sourceTree = "<group>"; };
+		4E1CF2A61E5F568200FABDF0 /* nnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = nnViewController.m; sourceTree = "<group>"; };
+		4E1CF2A71E5F568200FABDF0 /* nnViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = nnViewController.xib; sourceTree = "<group>"; };
 		4E330D991DB3BBAF007B0031 /* FTWaterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTWaterView.h; sourceTree = "<group>"; };
 		4E330D9A1DB3BBAF007B0031 /* FTWaterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTWaterView.m; sourceTree = "<group>"; };
 		4E330D9C1DB3C1FF007B0031 /* WaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterViewController.h; sourceTree = "<group>"; };
@@ -73,11 +76,7 @@
 		6762FEAB1D64101000109C18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6762FEAD1D64101000109C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6762FEB21D64101100109C18 /* BYAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6762FEB61D64101100109C18 /* BYAlertViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYAlertViewTests.m; sourceTree = "<group>"; };
-		6762FEB81D64101100109C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6762FEBD1D64101100109C18 /* BYAlertViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BYAlertViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6762FEC11D64101100109C18 /* BYAlertViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BYAlertViewUITests.m; sourceTree = "<group>"; };
-		6762FEC31D64101100109C18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67838D841DB4603600659FD6 /* FTConsultButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTConsultButton.h; sourceTree = "<group>"; };
 		67838D851DB4603600659FD6 /* FTConsultButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTConsultButton.m; sourceTree = "<group>"; };
 		67838D881DB4764800659FD6 /* ConsultNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsultNewViewController.h; sourceTree = "<group>"; };
@@ -126,6 +125,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		4E1CF2A41E5F568200FABDF0 /* xxx */ = {
+			isa = PBXGroup;
+			children = (
+				4E1CF2A51E5F568200FABDF0 /* nnViewController.h */,
+				4E1CF2A61E5F568200FABDF0 /* nnViewController.m */,
+				4E1CF2A71E5F568200FABDF0 /* nnViewController.xib */,
+			);
+			path = xxx;
+			sourceTree = "<group>";
+		};
 		4E330D981DB3BB7C007B0031 /* WaterRipple */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				6762FE9B1D64101000109C18 /* BYAlertView */,
-				6762FEB51D64101100109C18 /* BYAlertViewTests */,
-				6762FEC01D64101100109C18 /* BYAlertViewUITests */,
 				6762FE9A1D64101000109C18 /* Products */,
 				1B46A44878D7B2F4A1770057 /* Pods */,
 				E4E2973BC962B1C45D2737AA /* Frameworks */,
@@ -174,6 +181,7 @@
 				67DBE2901D65AAEB006932D7 /* FTPopOverMenu.h */,
 				67DBE2911D65AAEB006932D7 /* FTPopOverMenu.m */,
 				4E330D9C1DB3C1FF007B0031 /* WaterViewController.h */,
+				4E1CF2A41E5F568200FABDF0 /* xxx */,
 				4E330D9D1DB3C1FF007B0031 /* WaterViewController.m */,
 				67838D841DB4603600659FD6 /* FTConsultButton.h */,
 				67838D851DB4603600659FD6 /* FTConsultButton.m */,
@@ -182,7 +190,6 @@
 				6762FEA51D64101000109C18 /* Main.storyboard */,
 				6762FEA81D64101000109C18 /* Assets.xcassets */,
 				6762FEAA1D64101000109C18 /* LaunchScreen.storyboard */,
-				6762FEAD1D64101000109C18 /* Info.plist */,
 				6762FE9C1D64101000109C18 /* Supporting Files */,
 			);
 			path = BYAlertView;
@@ -191,27 +198,10 @@
 		6762FE9C1D64101000109C18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6762FEAD1D64101000109C18 /* Info.plist */,
 				6762FE9D1D64101000109C18 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6762FEB51D64101100109C18 /* BYAlertViewTests */ = {
-			isa = PBXGroup;
-			children = (
-				6762FEB61D64101100109C18 /* BYAlertViewTests.m */,
-				6762FEB81D64101100109C18 /* Info.plist */,
-			);
-			path = BYAlertViewTests;
-			sourceTree = "<group>";
-		};
-		6762FEC01D64101100109C18 /* BYAlertViewUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6762FEC11D64101100109C18 /* BYAlertViewUITests.m */,
-				6762FEC31D64101100109C18 /* Info.plist */,
-			);
-			path = BYAlertViewUITests;
 			sourceTree = "<group>";
 		};
 		67838D871DB4761F00659FD6 /* ConsultNewViewController */ = {
@@ -345,6 +335,7 @@
 				6762FEAC1D64101000109C18 /* LaunchScreen.storyboard in Resources */,
 				6762FEA91D64101000109C18 /* Assets.xcassets in Resources */,
 				67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */,
+				4E1CF2A91E5F568200FABDF0 /* nnViewController.xib in Resources */,
 				4E330DA01DB3C1FF007B0031 /* WaterViewController.xib in Resources */,
 				6762FEA71D64101000109C18 /* Main.storyboard in Resources */,
 				4E5D30A21DDDFD7F006D7064 /* LabelViewController.xib in Resources */,
@@ -429,6 +420,7 @@
 				67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,
+				4E1CF2A81E5F568200FABDF0 /* nnViewController.m in Sources */,
 				4E5D30A01DDDFD16006D7064 /* LabelViewController.m in Sources */,
 				67838D8B1DB4764800659FD6 /* ConsultNewViewController.m in Sources */,
 				6762FE9E1D64101000109C18 /* main.m in Sources */,
@@ -439,7 +431,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6762FEB71D64101100109C18 /* BYAlertViewTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6762FEC21D64101100109C18 /* BYAlertViewUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -97,18 +97,18 @@ static NSString *cellId = @"NormalCell";
             break;
     }
     
-    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
-    dispatch_async(queue, ^{
-        
-        NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
-        NSURL *url = [NSURL URLWithString:urlStr];
-        NSError *error = nil;
-        NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
-        UIImage *image = [UIImage imageWithData:imageData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cell.imageView.image = image;
-        });
-    });
+//    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+//    dispatch_async(queue, ^{
+//        
+//        NSString *urlStr = @"http://pica.nipic.com/2007-12-12/20071212235955316_2.jpg";
+//        NSURL *url = [NSURL URLWithString:urlStr];
+//        NSError *error = nil;
+//        NSData *imageData = [NSData dataWithContentsOfURL:url options:NSDataReadingMappedIfSafe error:&error];
+//        UIImage *image = [UIImage imageWithData:imageData];
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            cell.imageView.image = image;
+//        });
+//    });
 
     return cell;
 }
@@ -153,25 +153,25 @@ static NSString *cellId = @"NormalCell";
 //    } dismissBlock:^{
 //        
 //    }];
-    if(indexPath.row == 0){
-        ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
-        vc.needPushDrug = NO;
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1){
-        
-        ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
-        vc.needPushDrug = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if(indexPath.row == 2){
-        WaterViewController *vc = [[WaterViewController alloc] init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }else if(indexPath.row == 3){
-        LabelViewController *lb = [[LabelViewController alloc] init];
-        [self.navigationController pushViewController:lb animated:YES];
-    }else if(indexPath.row == 4){
-        CustomNumberKeyboardViewController *cvc = [[CustomNumberKeyboardViewController alloc] init];
-        [self.navigationController pushViewController:cvc animated:YES];
-    }
+//    if(indexPath.row == 0){
+//        ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
+//        vc.needPushDrug = NO;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }else if (indexPath.row == 1){
+//        
+//        ConsultNewViewController *vc = [[ConsultNewViewController alloc] init];
+//        vc.needPushDrug = YES;
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }else if(indexPath.row == 2){
+//        WaterViewController *vc = [[WaterViewController alloc] init];
+//        [self.navigationController pushViewController:vc animated:YES];
+//    }else if(indexPath.row == 3){
+//        LabelViewController *lb = [[LabelViewController alloc] init];
+//        [self.navigationController pushViewController:lb animated:YES];
+//    }else if(indexPath.row == 4){
+//        CustomNumberKeyboardViewController *cvc = [[CustomNumberKeyboardViewController alloc] init];
+//        [self.navigationController pushViewController:cvc animated:YES];
+//    }
    
 }
 
