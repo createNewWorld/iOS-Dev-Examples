@@ -217,11 +217,6 @@
 				6762FEA01D64101000109C18 /* AppDelegate.m */,
 				6762FEA21D64101000109C18 /* ViewController.h */,
 				6762FEA31D64101000109C18 /* ViewController.m */,
-				6779561F1E48746400C2236A /* WaterHeaderView.h */,
-				677956201E48746400C2236A /* WaterHeaderView.m */,
-				6779561A1E48729E00C2236A /* TimeAxisTableViewController.h */,
-				6779561B1E48729E00C2236A /* TimeAxisTableViewController.m */,
-				6779561C1E48729E00C2236A /* TimeAxisTableViewController.xib */,
 				67892A801E3210F1001BC7BE /* DownloadTool */,
 				675EC7B01E2EFF24002CCD98 /* CollectionViewController.h */,
 				675EC7B11E2EFF24002CCD98 /* CollectionViewController.m */,
@@ -235,9 +230,6 @@
 				674E525E1E03D50900CDC7F2 /* ButtonTouchActionViewController.h */,
 				674E525F1E03D50900CDC7F2 /* ButtonTouchActionViewController.m */,
 				674E52601E03D50900CDC7F2 /* ButtonTouchActionViewController.xib */,
-				676BA1011E13904700BB64D8 /* SideslipCell.h */,
-				676BA1021E13904700BB64D8 /* SideslipCell.m */,
-				676BA1031E13904700BB64D8 /* SideslipCell.xib */,
 				6752014A1DF654F3000E80A0 /* ModeChooseView.h */,
 				6752014B1DF654F3000E80A0 /* ModeChooseView.m */,
 				4E5D309E1DDDFD16006D7064 /* LabelViewController.h */,
@@ -433,9 +425,7 @@
 				67892A8D1E321429001BC7BE /* BYTableViewController.xib in Resources */,
 				674E52621E03D50900CDC7F2 /* ButtonTouchActionViewController.xib in Resources */,
 				6762FEAC1D64101000109C18 /* LaunchScreen.storyboard in Resources */,
-				6779561E1E48729E00C2236A /* TimeAxisTableViewController.xib in Resources */,
 				6762FEA91D64101000109C18 /* Assets.xcassets in Resources */,
-				676BA1051E13904700BB64D8 /* SideslipCell.xib in Resources */,
 				67838D8C1DB4764800659FD6 /* ConsultNewViewController.xib in Resources */,
 				4E1CF2A91E5F568200FABDF0 /* nnViewController.xib in Resources */,
 				4E330DA01DB3C1FF007B0031 /* WaterViewController.xib in Resources */,
@@ -493,7 +483,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A1D123B4F6B7C9E468069848 /* [CP] Copy Pods Resources */ = {
@@ -528,14 +518,11 @@
 				67DBE2921D65AAEB006932D7 /* FTPopOverMenu.m in Sources */,
 				4E330D9B1DB3BBAF007B0031 /* FTWaterView.m in Sources */,
 				4E9F30CF1DEB14E900A4CD69 /* CustomNumberKeyboardViewController.m in Sources */,
-				676BA1041E13904700BB64D8 /* SideslipCell.m in Sources */,
 				67892A7F1E32054A001BC7BE /* ProgressTextLayer.m in Sources */,
 				4E330DA31DB51927007B0031 /* CirleProgressView.m in Sources */,
 				675EC7B31E2EFF24002CCD98 /* CollectionViewController.m in Sources */,
 				67838D861DB4603600659FD6 /* FTConsultButton.m in Sources */,
-				6779561D1E48729E00C2236A /* TimeAxisTableViewController.m in Sources */,
 				6762FEA41D64101000109C18 /* ViewController.m in Sources */,
-				677956211E48746400C2236A /* WaterHeaderView.m in Sources */,
 				674BD1391E30B0600009BF66 /* CustomLayer.m in Sources */,
 				6762FEA11D64101000109C18 /* AppDelegate.m in Sources */,
 				4E1CF2A81E5F568200FABDF0 /* nnViewController.m in Sources */,

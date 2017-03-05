@@ -17,6 +17,7 @@
 #import "TimeAxisTableViewController.h"
 
 #import "ModeChooseView.h"
+#import <testRepo/UIImage+testRepo.h>
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -52,6 +53,10 @@ static NSString *cellId = @"NormalCell";
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.navigationBar.translucent = NO;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellId];
+    
+    UIImage *image = [UIImage new];
+    UIImage *newImage = [image imageWithColor:[UIColor orangeColor] size:CGSizeMake(20, 20)];
+    
 }
 
 - (void)loadImage
