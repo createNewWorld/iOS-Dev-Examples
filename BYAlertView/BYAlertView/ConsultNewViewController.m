@@ -75,7 +75,8 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
     [self.rippleView stopAnimating];
-    [self.rippleView startRippleEffec];
+    if([self.rippleView respondsToSelector:@selector(startRippleEffec)])
+        [self.rippleView startRippleEffec];
     
     //假设2秒延时后开始通话
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -91,7 +92,10 @@
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.rippleView stopAnimating];
-    [self.rippleView stopRippleEffec];
+    if([self.rippleView respondsToSelector:@selector(stopRippleEffec)]){
+         [self.rippleView stopRippleEffec];
+    }
+   
 }
 
 #pragma mark - init Subviews

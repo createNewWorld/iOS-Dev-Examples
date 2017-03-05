@@ -7,6 +7,7 @@
 //
 
 #import "CustomNumberKeyboardViewController.h"
+#import "DownloadButton.h"
 
 @interface CustomNumberKeyboardViewController ()
 
@@ -30,8 +31,18 @@
     }
     //isDoingEdit draw a line
     self.inputTextField.userInteractionEnabled = NO;
+    self.inputTextField.secureTextEntry = YES;
     [self setEditing:YES textField:self.inputTextField];
     [self.inputTextField addTarget:self action:@selector(valueChanged:)  forControlEvents:UIControlEventAllEditingEvents];
+    DownloadButton *button = [[DownloadButton alloc] initWithFrame:CGRectMake(90, 130, 40, 40)];
+    [button addTarget:self action:@selector(downloadButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button];
+ }
+
+- (void)downloadButtonClicked:(DownloadButton *)sender
+{
+    [sender setDownloadGraphicalProgress:0.5f ForState:DownloadControlStateDownloading];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

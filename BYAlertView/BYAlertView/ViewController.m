@@ -12,6 +12,11 @@
 #import "ConsultNewViewController.h"
 #import "LabelViewController.h"
 #import "CustomNumberKeyboardViewController.h"
+#import "ButtonTouchActionViewController.h"
+#import "YYTableViewController.h"
+#import "TimeAxisTableViewController.h"
+
+#import "ModeChooseView.h"
 
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 
@@ -28,7 +33,7 @@ static NSString *cellId = @"NormalCell";
 
 - (void)awakeFromNib
 {
-
+    [super awakeFromNib];
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -66,7 +71,7 @@ static NSString *cellId = @"NormalCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -93,6 +98,21 @@ static NSString *cellId = @"NormalCell";
         case 4:
             cell.textLabel.text = @"自定义键盘，显示光标";
             break;
+            
+        case 5:
+            cell.textLabel.text = @"ModelChooseView";
+            break;
+        case 6:
+            cell.textLabel.text = @"ButtonAction";
+            break;
+            
+        case 7:
+            cell.textLabel.text = @"TableViewController";
+            break;
+        case 8:
+            cell.textLabel.text = @"时间轴";
+            break;
+            
         default:
             break;
     }
